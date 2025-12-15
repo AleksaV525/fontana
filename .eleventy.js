@@ -6,19 +6,18 @@ module.exports = function(eleventyConfig) {
 
   // Generisanje stranica za svaki proizvod
   eleventyConfig.addCollection("productPages", function() {
-    return products.map((product, idx) => ({
+    return products.map((product) => ({
       ...product,
-      url: `/products/${idx}/`
+      // Korigovana putanja (prema novoj logici koju ste mi dali, koristeći id)
+      url: `/proizvodi/${product.id}/` 
     }));
   });
 
-  // Kreiranje stranica po proizvodu
-  products.forEach((product, idx) => {
-    eleventyConfig.addTemplateFormats("njk");
-    eleventyConfig.addPassthroughCopy("src/img");
-  });
+  // Ostavljam prazan blok jer je addTemplateFormats nepotreban ovde, a passthrough je dupliran.
 
   return {
+    // KLJUČNA PROMENA OVDE: pathPrefix
+    pathPrefix: "/fontana/", 
     dir: {
       input: "src",
       output: "dist",
