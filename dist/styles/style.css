@@ -1,0 +1,1424 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
+  background: #fff;
+}
+/* ============================= */
+/*             POCETNA           */
+/* ============================= */
+.hero {
+  height: 100vh;
+  width: 100%;
+  background: url('/img/hero-image.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  max-width: 700px;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  padding: 14px 35px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+    
+/* FEATURES */
+/* FEATURES */
+.features {
+  max-width: 1300px;
+  margin: 100px auto;
+  padding: 0 40px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr); /* UVEK DVA */
+}
+
+/* VEĆE KARTICE */
+.feature-card {
+  background: #fff;
+  padding: 50px;                      /* veće */
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: .3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.feature-card img {
+  width: 80px;                        /* veći icon */
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.6rem;                  /* veći naslov */
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 1.05rem;                 /* malo veći tekst */
+}
+
+/* MOBILE – kartice 1 po redu */
+@media (max-width: 700px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin: 80px 0 40px;   /* razmak iznad i ispod */
+}
+
+.section-title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4CAFFF;        /* plava */
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+/* Donja linija (moderno, suptilno) */
+.section-title h1::after {
+  content: "";
+  width: 60%;
+  height: 4px;
+  background: #4CAFFF;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+/* =======================================================
+   NOVE SEKCIJE ZA INDEX.MD
+   ======================================================= */
+
+/* --- Stilovi za Izdvojene Proizvode (.index-promoted-products) --- */
+
+.index-promoted-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.index-product-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.index-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.index-product-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.index-product-card h3 {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.index-product-card p {
+    color: #666666;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    flex-grow: 1; 
+}
+
+/* Stil za dugme za detalje o proizvodu */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primarna/Sekundarna boja */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: none;
+    margin-top: auto; 
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3;
+}
+
+/* --- NOVI Stilovi za Poziv na Akciju (.index-call-to-action) --- */
+
+.index-call-to-action {
+    background-color: #f0f8ff; /* Vrlo svetlo plava pozadina */
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+}
+
+.index-call-to-action h2 {
+    font-size: 2.2em;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.index-contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.index-contact-block {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 450px;
+    min-width: 280px;
+}
+
+.index-contact-block h3 {
+    font-size: 1.6em;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.index-contact-block p {
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+/* Dugme za primarni poziv (Pozovi odmah) */
+.btn-cta {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #28a745; /* Zelena za poziv/akciju */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #1e7e34;
+}
+
+/* Dugme za sekundarni poziv (Kontaktirajte nas) */
+.btn-cta-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff; /* Plava */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.btn-cta-secondary:hover {
+    background-color: #0056b3;
+}
+
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    .index-contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+/* ============================= */
+/*             KONTAKT           */
+/* ============================= */
+
+/* Definicija varijabli i opšteg stila za ovu sekciju */
+.contact-section {
+    --accent-color: #4CAFFF; 
+    --dark-text: #2c3e50;    
+    --light-bg: #fcfcfc;     
+    --border-color: #ddd;    
+    
+    /* Font se primenjuje samo na ovu sekciju */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    padding-bottom: 60px;
+    position: relative;
+    /* Ako ne koristite container, ovde možete podesiti max-width i margine: */
+    /* max-width: 1200px; margin: 0 auto; */
+}
+
+/* 1. Offset i Kontejner */
+.contact-section.content-offset {
+    padding-top: 120px; /* Podesite prema visini headera */
+}
+
+.contact-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Naslovi */
+.contact-section .contact-title {
+    font-size: 3.5em;
+    font-weight: 800;
+    color: var(--dark-text); 
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-section .contact-subtitle {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-section .info-title, 
+.contact-section .form-title {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+
+/* 3. Info Grid, Mapa i Premium Senke */
+.contact-section .contact-info-map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 40px;
+    margin-bottom: 60px;
+    /* KLJUČ ZA CENTRIRANJE MAPE */
+    align-items: center; 
+    
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    
+    /* Vrhunska Senka */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04), 0 5px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eee; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Mikro-animacija na hoveru */
+.contact-section .contact-info-map-grid:hover, 
+.contact-section .contact-form-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-section .contact-form-section {
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04), 0 5px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lista Kontakt Informacija */
+.contact-section .info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-section .info-list li {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    margin-bottom: 15px; 
+    border-bottom: 1px dotted #f0f0f0;
+}
+.contact-section .info-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.contact-section .info-list .icon {
+    font-size: 1.3em;
+    color: var(--accent-color);
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(76, 175, 255, 0.3); 
+}
+
+.contact-section .info-list .info-label {
+    font-weight: 700;
+    color: var(--dark-text);
+    min-width: 90px;
+    flex-shrink: 0; 
+}
+
+.contact-section .info-list .info-link, 
+.contact-section .info-list .info-text {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-word; 
+}
+
+.contact-section .info-list .info-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Mapa Kontejner */
+.contact-section .contact-map {
+    /* Centriranje unutar grid ćelije */
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100%; 
+}
+
+/* Mapa iframe */
+.contact-section .contact-map iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Kontakt Forma */
+.contact-section .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-section .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section .contact-form .form-group:nth-child(3), 
+.contact-section .contact-form .form-group:nth-child(4) { 
+    grid-column: 1 / span 2;
+}
+
+.contact-section .contact-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-text);
+}
+
+.contact-section .contact-form input, 
+.contact-section .contact-form textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px; 
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical; 
+}
+
+.contact-section .contact-form input:focus, 
+.contact-section .contact-form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(76, 175, 255, 0.1); 
+}
+
+/* Submit dugme */
+.contact-section .submit-button {
+    grid-column: 1 / span 2;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 8px 15px rgba(76, 175, 255, 0.4); 
+}
+
+.contact-section .submit-button:hover {
+    background-color: #3a98e6; 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 20px rgba(76, 175, 255, 0.6);
+}
+
+.contact-section .submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(76, 175, 255, 0.4);
+}
+
+/* Status poruka (JS-drivena) */
+.contact-section .form-status {
+    grid-column: 1 / span 2;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+
+/* 5. Responsive Prilagođavanje */
+@media (max-width: 900px) {
+    .contact-section .contact-info-map-grid {
+        grid-template-columns: 1fr; 
+    }
+    .contact-section .contact-map iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-section .contact-title {
+        font-size: 2.5em;
+    }
+    .contact-section .contact-form {
+        grid-template-columns: 1fr; 
+    }
+    .contact-section .contact-form .form-group {
+        grid-column: 1 / span 1 !important; 
+    }
+}
+/*=====================*/
+/*     KATALOG         */
+/*=====================*/
+/*==========================================================
+  Katalog Stilovi
+============================================================*/
+
+/* Globalne varijable */
+.catalog-section {
+    --primary-color: #007bff;
+    --secondary-color: #212529;
+    --accent-bg: #f8f9fa;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    background-color: white;
+    padding-bottom: 80px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.catalog-section.content-offset {
+    padding-top: 120px; 
+}
+
+.catalog-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.katalog-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* --- GLAVNI LAYOUT (GRID) --- */
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Leva kolona fiksna širina, desna fleksibilna */
+    gap: 40px;
+}
+
+/* --- LEVA KOLONA: FILTERI --- */
+.filter-sidebar {
+    padding: 20px;
+    background-color: var(--accent-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    height: fit-content; /* Da ne zauzima celu visinu */
+    position: sticky;
+    top: 100px; /* Da ostane na vrhu pri skrolovanju */
+}
+
+.filter-sidebar h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.filter-sidebar h2 i {
+    margin-right: 10px;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+}
+
+.filter-checkbox-label {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.filter-checkbox-label:hover {
+    color: var(--primary-color);
+}
+
+.filter-checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+}
+
+
+/* --- DESNA KOLONA: KONTROLE & PROIZVODI --- */
+.catalog-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 300px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.sort-controls label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-right: 10px;
+}
+
+.sort-select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    appearance: none; /* Uklanja native strelicu */
+    background-color: white;
+    cursor: pointer;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.product-image-wrapper {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+}
+
+.product-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.view-details-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.view-details-btn:hover {
+    background-color: #0056b3;
+}
+
+.no-results {
+    grid-column: 1 / -1; /* Centriranje poruke preko celog grida */
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .catalog-layout {
+        grid-template-columns: 1fr; /* Na manjim ekranima, filteri idu gore */
+    }
+    .filter-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
+    .catalog-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .sort-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+/*==========================================================
+  Single Product Stilovi 
+============================================================*/
+/*==========================================================
+  Single Product Stilovi (Kataloški Prikaz)
+============================================================*/
+
+/* LOKALNE VARIJABLE */
+.single-product-section {
+    --primary-color: #4CAFFF; 
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --light-bg: #fcfcfc;
+    --border-color: #ddd;
+    --cta-hover-color: #3a98e6;
+
+    background-color: var(--light-bg);
+    padding-bottom: 80px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* REŠENJE ZA TRANSPARENTNI HEADER */
+.single-product-section.content-offset {
+    padding-top: 120px; 
+}
+
+.product-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* 1. GLAVNI PRIKAZ (SLIKA I DETALJI) */
+.product-main-view {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; 
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+/* --- LEVA KOLONA: SLIDER (GALERIJA) --- (STIIL JE ISTI KAO PRE) */
+.product-gallery {
+    background: transparent;
+    border-radius: 12px;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 550px; 
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+    border-radius: 12px;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.slide[style*="opacity: 1"] {
+    display: block;
+}
+
+/* Dugmad i Brojač su isti */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 12px 15px; 
+    color: white;
+    font-size: 24px; 
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s, transform 0.3s;
+    user-select: none;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slide-counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    z-index: 10;
+}
+
+/* --- DESNA KOLONA: DETALJI --- */
+.product-details {
+    padding: 20px 0;
+}
+
+.product-title {
+    font-size: 3.2em;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 30px; /* Veća margina jer nema cene */
+    line-height: 1.1;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+}
+
+.short-description {
+    color: #444;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* AKCIJE: Dugme za Kontakt/Upit (Glavni CTA) */
+.product-action-box {
+    margin-bottom: 30px;
+}
+
+.contact-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 18px 25px; /* Još veći padding za isticanje */
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(76, 175, 255, 0.5); /* Jača senka */
+}
+
+.contact-btn:hover {
+    background-color: var(--cta-hover-color);
+    transform: translateY(-3px); /* Veći pokret za isticanje */
+    box-shadow: 0 15px 35px rgba(76, 175, 255, 0.7);
+}
+
+/* INFORMACIJE ZA DIREKTAN POZIV */
+.direct-contact-info {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: 30px;
+}
+
+.contact-highlight {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.contact-number {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-number:hover {
+    color: var(--primary-color);
+}
+
+.contact-highlight i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+
+/* IKONE POVERENJA (Prilagođene) */
+.trust-icons {
+    display: flex;
+    gap: 30px;
+    font-size: 0.9em;
+    color: #555;
+    padding-top: 15px;
+}
+
+.trust-icons i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+
+/* 2. DODATNI DETALJI (Opis i Specifikacije) */
+.product-secondary-info {
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.secondary-title {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.product-description-content p {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.product-specs-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px 40px;
+}
+
+.product-specs-list li {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+
+/* --- RESPONSIVE PRILAGOĐAVANJE --- */
+@media (max-width: 1000px) {
+    .product-main-view {
+        grid-template-columns: 1fr;
+    }
+    .slider-container {
+        height: 450px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .product-container {
+        padding: 0 15px;
+    }
+    .slider-container {
+        height: 350px;
+    }
+    .trust-icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* --- NOVI STILOVI ZA LIGHTBOX/MODAL --- */
+
+.lightbox-modal {
+    display: none; /* Sakriven po defaultu */
+    position: fixed;
+    z-index: 1000; /* Ispred svega */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Crna pozadina sa transparentnošću */
+    backdrop-filter: blur(5px); /* Vizuelno poboljšanje */
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.is-active {
+    display: block;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh; /* Da stane na ekran */
+    object-fit: contain;
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
+
+/* Dugme za zatvaranje */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Dugmad za navigaciju unutar modala */
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.modal-nav:hover {
+    color: var(--primary-color);
+}
+
+.modal-nav.prev-btn { left: 10px; }
+.modal-nav.next-btn { right: 10px; }
+
+/*==========================================================
+  ONAMA Page Stilovi (World-Class Redizajn)
+============================================================*/
+
+/* Globalne varijable za konzistentnost i laku izmenu */
+.onama-section {
+    --primary-color: #007bff; /* Moderna, duboka plava */
+    --secondary-color: #212529; /* Gotovo crna, formalna */
+    --text-color: #495057;
+    --background-color: #f8f9fa; /* Veoma svetla pozadina */
+    --accent-bg: #e9ecef; /* Suptilna siva za isticanje blokova */
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --transition-speed: 0.3s ease-out;
+
+    background-color: var(--background-color);
+    padding-bottom: 100px;
+    font-family: 'Poppins', sans-serif; /* Moderniji font za premium osećaj */
+    line-height: 1.65;
+}
+
+/* Osnovna struktura */
+.onama-section.content-offset {
+    padding-top: 120px; 
+}
+
+.onama-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- GLAVNI UVOD --- */
+.onama-main-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    padding-top: 40px;
+    text-align: center;
+    letter-spacing: -1px; /* Blago smanjivanje razmaka za moderni efekat */
+}
+
+.onama-intro-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto 60px; 
+    text-align: center;
+    font-weight: 300; /* Lakši font za kontrast */
+}
+
+/* --- 1. KLJUČNI BROJEVI I STATISTIKA (GRID PERFEKCIJA) --- */
+.onama-key-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+    background: white; /* Beli blok na svetloj pozadini */
+    border-radius: 16px;
+    margin-bottom: 80px;
+    box-shadow: var(--shadow-light);
+    transform: translateY(0);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* Suptilna animacija celog bloka */
+.onama-key-stats-grid:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.onama-stat-card {
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+}
+
+/* Separator između kartica (Bolje od border-right) */
+.onama-stat-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: var(--accent-bg);
+}
+
+.onama-stat-number {
+    display: block;
+    font-size: 4rem; /* Veći brojevi za dramatičan utisak */
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.onama-stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* --- 2. PRIČA BLOK (Vizuelno odvajanje) --- */
+.onama-story-block {
+    margin-bottom: 80px;
+}
+
+.onama-story-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.onama-story-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.onama-story-content {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.onama-key-quote {
+    display: block;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--secondary-color);
+    border-left: 6px solid var(--primary-color); /* Deblji, istaknutiji border */
+    padding: 20px 25px;
+    margin: 40px 0;
+    background-color: var(--accent-bg);
+    border-radius: 0 10px 10px 0;
+    box-shadow: inset 5px 0 10px rgba(0, 0, 0, 0.05); /* Unutrašnja senka */
+}
+
+/* --- 3. VREDNOSTI GRID (Kartice sa efektom lebdenja) --- */
+.onama-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px 0;
+    margin-bottom: 80px;
+}
+
+.onama-value-item {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: var(--shadow-light);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.onama-value-item:hover {
+    transform: translateY(-8px); /* Jači efekat lebdenja */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.onama-value-item i {
+    font-size: 3rem; /* Veće ikone */
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    /* Suptilan glow na ikonama */
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.onama-value-item h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.onama-value-item p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* --- 4. CALL TO ACTION SEKCIJA (Fokusiran i moćan) --- */
+.onama-cta-block {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%); /* Elegantan gradijent */
+    color: white;
+    padding: 80px 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3); /* Istaknuta senka */
+}
+
+.onama-cta-block h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.onama-cta-contact-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: white; /* Obrnuta boja CTA */
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.onama-cta-contact-btn:hover {
+    background-color: var(--accent-bg);
+    transform: translateY(-3px) scale(1.02);
+    color: #004a9e;
+}
+
+
+/* --- RESPONSIVE PRILAGOĐAVANJE --- */
+@media (max-width: 992px) {
+    .onama-values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .onama-key-stats-grid {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+    .onama-stat-card:not(:last-child)::after {
+        content: none; /* Uklanjamo vertikalni separator na mobilnom */
+        border-bottom: 1px solid var(--accent-bg);
+        width: 80%;
+        left: 10%;
+        bottom: 0;
+        top: auto;
+        height: 1px;
+    }
+    .onama-values-grid {
+        grid-template-columns: 1fr;
+    }
+    .onama-main-title {
+        font-size: 2.2rem;
+    }
+    .onama-story-heading {
+        font-size: 1.8rem;
+    }
+    .onama-key-quote {
+        font-size: 1.2rem;
+    }
+}
